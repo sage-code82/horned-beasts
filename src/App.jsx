@@ -4,7 +4,12 @@ import "./Components/Footer";
 import "./Components/Gallery";
 
 function App() {
-  return <></>;
+  return;
+  <>
+    <Header />
+    <Gallery />
+    <Footer />
+  </>;
 }
 
 export default App;
