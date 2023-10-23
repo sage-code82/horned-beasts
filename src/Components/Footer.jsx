@@ -1,3 +1,3 @@
 export default function (Footer) {
-  return <p>Stephen Sage aged 41 and 1/4</p>;
+  return <p className="Footer">Stephen Sage aged 41 and 1/4</p>;
 }
