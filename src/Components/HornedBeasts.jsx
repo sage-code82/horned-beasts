@@ -1,11 +1,14 @@
-const HornedBeast = ({ title, imageUrl, description }) => {
+export default function Hornedbeast(props) {
   return (
-    <div className="horned-beast">
-      <h2>{title}</h2>
-      <img src={imageUrl} alt={title} title={title} />
-      <p>{description}</p>
-    </div>
+    <>
+      <h2 key={props.id}>{props.title}</h2>
+      <img
+        key={props.id}
+        src={props.image_url}
+        alt={props.keyword}
+        title={props.title}
+      />
+      <p key={props.id}>{props.description}</p>
+    </>
   );
-};
-
-export default HornedBeast;
+}
