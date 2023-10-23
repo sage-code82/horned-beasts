@@ -1,15 +1,16 @@
 import "./App.css";
-import "./Components/Header";
-import "./Components/Footer";
-import "./Components/Gallery";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Gallery from "./Components/Gallery";
 
 function App() {
-  return;
-  <>
-    <Header />
-    <Gallery />
-    <Footer />
-  </>;
+  return (
+    <>
+      <Header />
+      <Gallery />
+      <Footer />
+    </>
+  );
 }
 
 export default App;

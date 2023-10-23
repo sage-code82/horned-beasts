@@ -1,6 +1,4 @@
-import "./HornedBeasts";
-
-import HornedBeast from "./HornedBeast";
+import HornedBeast from "./HornedBeasts";
 
 const Gallery = () => {
   const hornedBeastsData = [
