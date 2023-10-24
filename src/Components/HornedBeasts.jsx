@@ -1,6 +1,14 @@
+import React, { useState } from "react";
+
 export default function Hornedbeast(props) {
+  const [faves, setFaves] = useState(0);
+
+  const handleFavesClick = () => {
+    setFaves(faves + 1);
+  };
+
   return (
-    <>
+    <div className="horned-beast" onClick={handleFavesClick}>
       <h2 key={props.id}>{props.title}</h2>
       <img
         key={props.id}
@@ -9,6 +17,7 @@ export default function Hornedbeast(props) {
         title={props.title}
       />
       <p key={props.id}>{props.description}</p>
-    </>
+      <p>{faves} Favorites</p>
+    </div>
   );
 }
