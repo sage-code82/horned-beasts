@@ -17,7 +17,9 @@ export default function Hornedbeast(props) {
         title={props.title}
       />
       <p key={props.id}>{props.description}</p>
-      <p>{faves} Favorites</p>
+      <p>
+        {faves} {"\u2764"}
+      </p>
     </div>
   );
 }
