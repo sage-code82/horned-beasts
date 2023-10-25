@@ -8,7 +8,7 @@ export default function Hornedbeast(props) {
   };
 
   return (
-    <div className="horned-beast" onClick={handleFavesClick}>
+    <div className="horned-beast">
       <h2 key={props.id}>{props.title}</h2>
       <img
         key={props.id}
@@ -17,7 +17,7 @@ export default function Hornedbeast(props) {
         title={props.title}
       />
       <p key={props.id}>{props.description}</p>
-      <p>
+      <p onClick={handleFavesClick}>
         {faves} {"\u2764"}
       </p>
     </div>
