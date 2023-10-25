@@ -1,7 +1,7 @@
 import HornedBeast from "./HornedBeasts";
-import hornedBeastsData from "../data.json";
+// import hornedBeastsData from "../data.json";
 
-const Gallery = () => {
+const Gallery = ({ hornedBeastsData }) => {
   return (
     <div className="gallery">
       {hornedBeastsData.map((beast, index) => (

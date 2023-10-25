@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Gallery from "./Components/Gallery";
+import hornedBeastsData from "./data.json";
 
 function App() {
   const [backgroundColor, changeBackground] = useState("#ffffff");
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className="app" style={{ backgroundColor }}>
       <Header onClick={handleBackgroundChange} />
-      <Gallery />
+      <Gallery hornedBeastsData={hornedBeastsData} />
       <Footer />
     </div>
   );
