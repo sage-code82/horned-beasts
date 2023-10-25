@@ -1,7 +1,7 @@
 import HornedBeast from "./HornedBeasts";
 // import hornedBeastsData from "../data.json";
 
-const Gallery = ({ hornedBeastsData }) => {
+const Gallery = ({ hornedBeastsData, openModal }) => {
   return (
     <div className="gallery">
       {hornedBeastsData.map((beast, index) => (
@@ -12,6 +12,7 @@ const Gallery = ({ hornedBeastsData }) => {
           description={beast.description}
           keyword={beast.alt}
           horns={beast.horns}
+          onClick={() => openModal(beast)}
         />
       ))}
     </div>
