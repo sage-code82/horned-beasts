@@ -6,7 +6,6 @@ import Gallery from "./Components/Gallery";
 
 function App() {
   const [backgroundColor, changeBackground] = useState("#ffffff");
-  const [glitchIt, setGlitch] = useState(false);
 
   const handleBackgroundChange = () => {
     const newColor = backgroundColor === "#ffffff" ? "lime" : "#ffffff";
