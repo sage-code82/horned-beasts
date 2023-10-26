@@ -8,25 +8,37 @@ import SelectedBeast from "./Components/SelectedBeast";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
-    const [shownBeast, setShownBeast] = useState({});
+  const [shownBeast, setShownBeast] = useState({});
   const [backgroundColor, changeBackground] = useState("#ffffff");
+  const [selectedHorns, setSelectedHorns] = useState("all");
   const handleBackgroundChange = () => {
     const newColor = backgroundColor === "#ffffff" ? "lime" : "#ffffff";
-    changeBackground(newColor);z
-
-    
+    changeBackground(newColor);
+    z;
   };
   function handleShowModal(beast) {
     setShowModal(!showModal);
     setShownBeast(beast);
   }
 
+  function handleFilterChange(event) {
+    setSelectedHorns(event.target.value);
+  }
+
   return (
     <div className="app" style={{ backgroundColor }}>
       <Header onClick={handleBackgroundChange} />
+      <select value={selectedHorns} onChange={handleFilterChange}>
+        <option value="all">All</option>
+        <option value="1">1 Horn</option>
+        <option value="2">2 Horns</option>
+        <option value="3">3 Horns</option>
+        <option value="100">100 Horns</option>
+      </select>
       <Gallery
         hornedBeastsData={hornedBeastsData}
         handleShowModal={handleShowModal}
+        selectedHorns={selectedHorns}
       />
       <Footer />
       {showModal && (

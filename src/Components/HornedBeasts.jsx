@@ -20,7 +20,7 @@ export default function Hornedbeast({
         onClick={() => handleShowModal({ title, image_url })}
       />
       <p> {description}</p>
-      <p>{horns}</p>
+      <p>number of horns {horns}</p>
       <p onClick={handleFavesClick}>
         {faves} {"\u2764"}
       </p>
