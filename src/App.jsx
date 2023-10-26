@@ -41,13 +41,13 @@ function App() {
         handleShowModal={handleShowModal}
         selectedHorns={selectedHorns}
       />
-      <Footer />
       {showModal && (
         <SelectedBeast
           shownBeast={shownBeast}
           handleShowModal={handleShowModal}
         />
       )}
+      <Footer />
     </div>
   );
 }

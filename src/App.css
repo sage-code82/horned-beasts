@@ -1,56 +1,85 @@
-.Header {
-  background-color: black;
-  color: white;
-  text-align: center;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.Footer {
-  background-color: black;
-  color: white;
-  text-align: center;
-  margin: 0;
+body {
+  font-family: Arial, sans-serif;
+  color: black;
 }
 
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
   gap: 20px;
-  margin: 20px;
+  padding: 20px;
+}
+
+.horned-beast {
+  background: #333;
+  color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+  width: calc(25% - 20px);
+  margin-bottom: 20px;
+}
+
+.horned-beast img {
+  max-width: 100%;
   height: auto;
+  border: 1px solid #ccc;
 }
 
-img {
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-  border: 1px solid black;
+.Header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
 }
 
+.Footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Add this CSS for the SelectedBeast modal */
 .SelectedBeast {
-  height: 100vh;
-  width: 100vw;
-  background-color: purple (0, 0, 0, 0.7);
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.SelectedBeast.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.SelectedBeast-content {
+  background: #fff;
+  max-width: 80%;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .SelectedBeast img {
-  height: 500px;
-  border: 10px solid black(255, 187, 0, 0.767);
-  border-radius: 10px;
-}
-
-.SelectedBeast p {
-  height: 20px;
-  border: 5px solid black;
-  background-color: white;
-  border-radius: 10px;
-  border: 5px solid black (255, 187, 0, 0.767);
+  max-width: 450px;
+  height: 450px;
 }
