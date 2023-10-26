@@ -1,13 +1,12 @@
-import React from "react";
-
-const SelectedBeast = ({ selectedBeast, onClose }) => {
+const SelectedBeast = ({ handleShowModal, image_url, description }) => {
   return (
-    <div className="modal">
+    <div className="SelectedBeast">
       <div className="modal-content">
-        <img src={selectedBeast.image_url} alt={selectedBeast.title} />
-        <h2>{selectedBeast.title}</h2>
-        <p>{selectedBeast.description}</p>
-        <button onClick={onClose}>Close</button>
+        <img height="imageHeight" onClick={handleShowModal} src={image_url} />
+        <p>{description}</p>
+        <button className="close-button" onClick={handleShowModal}>
+          X
+        </button>
       </div>
     </div>
   );
