@@ -1,13 +1,8 @@
-const SelectedBeast = ({ handleShowModal, image_url, description }) => {
+const SelectedBeast = ({ handleShowModal, shownBeast }) => {
   return (
-    <div className="SelectedBeast">
-      <div className="modal-content">
-        <img height="imageHeight" onClick={handleShowModal} src={image_url} />
-        <p>{description}</p>
-        <button className="close-button" onClick={handleShowModal}>
-          X
-        </button>
-      </div>
+    <div className="modal" onClick={handleShowModal}>
+      <h2>{shownBeast.title}</h2>
+      <img src={shownBeast.image_url} />
     </div>
   );
 };

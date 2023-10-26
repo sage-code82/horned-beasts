@@ -7,26 +7,34 @@ import hornedBeastsData from "./data.json";
 import SelectedBeast from "./Components/SelectedBeast";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+    const [shownBeast, setShownBeast] = useState({});
   const [backgroundColor, changeBackground] = useState("#ffffff");
-  const [showSelectedBeast, setShowSelectedBeast] = useState(false);
   const handleBackgroundChange = () => {
     const newColor = backgroundColor === "#ffffff" ? "lime" : "#ffffff";
-    changeBackground(newColor);
+    changeBackground(newColor);z
 
-    function handleShowSelectedBeast() {
-      setShowSelectedBeast(!showSelectedBeast);
-    }
+    
   };
+  function handleShowModal(beast) {
+    setShowModal(!showModal);
+    setShownBeast(beast);
+  }
 
   return (
     <div className="app" style={{ backgroundColor }}>
-      {showSelectedBeast && (
-        <SelectedBeast handleShowSelectedBeast={handleShowSelectedBeast} />
-      )}
-
       <Header onClick={handleBackgroundChange} />
-      <Gallery hornedBeastsData={hornedBeastsData} />
+      <Gallery
+        hornedBeastsData={hornedBeastsData}
+        handleShowModal={handleShowModal}
+      />
       <Footer />
+      {showModal && (
+        <SelectedBeast
+          shownBeast={shownBeast}
+          handleShowModal={handleShowModal}
+        />
+      )}
     </div>
   );
 }
