@@ -8,7 +8,7 @@ import SelectedBeast from "./Components/SelectedBeast";
 
 function App() {
   const [backgroundColor, changeBackground] = useState("#ffffff");
-  const [showSelectedBeast, setSelectedBeast] = useState(flase);
+  const [showSelectedBeast, setShowSelectedBeast] = useState(false);
   const handleBackgroundChange = () => {
     const newColor = backgroundColor === "#ffffff" ? "lime" : "#ffffff";
     changeBackground(newColor);

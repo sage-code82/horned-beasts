@@ -32,3 +32,30 @@ img {
   object-fit: cover;
   border: 1px solid black;
 }
+
+.SelectedBeast {
+  height: 100vh;
+  width: 100vw;
+  background-color: purple (0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.SelectedBeast img {
+  height: 500px;
+  border: 10px solid black(255, 187, 0, 0.767);
+  border-radius: 10px;
+}
+
+.SelectedBeast p {
+  height: 20px;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  border: 5px solid black (255, 187, 0, 0.767);
+}
