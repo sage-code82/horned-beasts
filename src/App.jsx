@@ -28,13 +28,14 @@ function App() {
   return (
     <div className="app" style={{ backgroundColor }}>
       <Header onClick={handleBackgroundChange} />
+      <label>How many horns do ya want?! </label>
       <select value={selectedHorns} onChange={handleFilterChange}>
         <option value="all">All</option>
         <option value="1">1 Horn</option>
         <option value="2">2 Horns</option>
         <option value="3">3 Horns</option>
         <option value="100">100 Horns</option>
-      </select>
+      </select>{" "}
       <Gallery
         hornedBeastsData={hornedBeastsData}
         handleShowModal={handleShowModal}
