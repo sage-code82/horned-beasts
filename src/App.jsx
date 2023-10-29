@@ -11,6 +11,8 @@ function App() {
   const [shownBeast, setShownBeast] = useState({});
   const [backgroundColor, changeBackground] = useState("#ffffff");
   const [selectedHorns, setSelectedHorns] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
   const handleBackgroundChange = () => {
     const newColor = backgroundColor === "#ffffff" ? "lime" : "#ffffff";
     changeBackground(newColor);
@@ -25,6 +27,22 @@ function App() {
     setSelectedHorns(event.target.value);
   }
 
+  function handleSearchQueryChange(event) {
+    const newSearch = event.target.value;
+    setSearchQuery(newSearch);
+  }
+
+  const filteredBeasts = hornedBeastsData.filter((beast) => {
+    if (
+      (selectedHorns === "all" || beast.horns === parseInt(selectedHorns)) &&
+      (beast.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        searchQuery === "")
+    ) {
+      return true;
+    }
+    return false;
+  });
+
   return (
     <div className="app" style={{ backgroundColor }}>
       <Header onClick={handleBackgroundChange} />
@@ -36,8 +54,16 @@ function App() {
         <option value="3">3 Horns</option>
         <option value="100">100 Horns</option>
       </select>{" "}
+      <p>OR</p>
+      <input
+        type="text"
+        placeholder="Search by beastie..."
+        value={searchQuery}
+        onChange={handleSearchQueryChange}
+      />
       <Gallery
-        hornedBeastsData={hornedBeastsData}
+        hornedBeastsData={filteredBeasts}
+        // hornedBeastsData={hornedBeastsData}
         handleShowModal={handleShowModal}
         selectedHorns={selectedHorns}
       />
